@@ -3,7 +3,7 @@ var makeGrid = require('./grid.js');
 var peakHeight = 180;
 
 function Land (color) {
-	this.grid = makeGrid(20, 30);
+	this.grid = makeGrid(35, 50);
 	makeIsland.call(this);
 	this.mesh = this.grid.makeMergedTriangles(color);
 	this.mesh.position.x += 190;
@@ -21,7 +21,7 @@ function makeIsland (){
 	}
 	that.grid.map2dArray(function(point){
 		var distanceFromPeak = getDistanceFromPeack(point);
-		var height = peakHeight / distanceFromPeak / 2 + Math.random() / distanceFromPeak * peakHeight;
+		var height = peakHeight / distanceFromPeak / 2 + Math.random() / distanceFromPeak * peakHeight * 2;
 		if (height > peakHeight * 1.5){
 			height = peakHeight;
 		}
@@ -34,7 +34,7 @@ function makeIsland (){
 function makePeak () {
 	var quoter = this.grid.length * this.grid.distance / 4;
 	function getCoordinate () {
-		return quoter + Math.random() * quoter;
+		return quoter + Math.random() * quoter * 1.25;
 	}
 	return {
 		x: getCoordinate(),

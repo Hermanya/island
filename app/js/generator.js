@@ -6,13 +6,17 @@ Light = require('./light.js');
 var scene,
 
 themes = [{
-	water: 0xB8D2Cf,
-	land: 0xD1AB8C
-}, {
-	water: 0x2e8b57,
-	land: 0x666666
-}, {
-	water: 0x1c6ba0,
+// 	water: 0xB8D2Cf,
+// 	land: 0xD1AB8C
+// }, {
+// 	water: 0x2e8b57,
+// 	land: 0x666666
+// }, {
+// 	water: 0x1c6ba0,
+// 	land: 0x60afaf
+// }
+// , {
+	water: 0x1c6bf0,
 	land: 0x60afaf
 }];
 

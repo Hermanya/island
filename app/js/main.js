@@ -12,8 +12,8 @@ window.addEventListener( 'resize', onWindowResize, false );
 function init() {
 	camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, -5000, 1000000 );
 	camera.position.y = 1850;
-	camera.position.x = -3000;
-	camera.position.z = -3000;
+	camera.position.x = -2500;
+	camera.position.z = -2500;
 	camera.rotation.order = 'YXZ';
 	camera.rotation.y -= Math.PI / 4 * 3;
 	camera.rotation.x -= Math.PI / 9;

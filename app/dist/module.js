@@ -7,15 +7,16 @@ Light = require('./light.js');
 var scene,
 
 themes = [{
-	water: 0xB8D2Cf,
-	land: 0xD1AB8C
+	water: 0x88a2df,
+	land: 0xa18B6C
 }, {
 	water: 0x2e8b57,
 	land: 0x666666
 }, {
 	water: 0x1c6ba0,
 	land: 0x60afaf
-}];
+}
+];
 
 
 function makeWater (color) {
@@ -168,7 +169,7 @@ var makeGrid = require('./grid.js');
 var peakHeight = 180;
 
 function Land (color) {
-	this.grid = makeGrid(20, 30);
+	this.grid = makeGrid(35, 50);
 	makeIsland.call(this);
 	this.mesh = this.grid.makeMergedTriangles(color);
 	this.mesh.position.x += 190;
@@ -186,7 +187,7 @@ function makeIsland (){
 	}
 	that.grid.map2dArray(function(point){
 		var distanceFromPeak = getDistanceFromPeack(point);
-		var height = peakHeight / distanceFromPeak / 2 + Math.random() / distanceFromPeak * peakHeight;
+		var height = peakHeight / distanceFromPeak / 2 + Math.random() / distanceFromPeak * peakHeight * 2;
 		if (height > peakHeight * 1.5){
 			height = peakHeight;
 		}
@@ -199,7 +200,7 @@ function makeIsland (){
 function makePeak () {
 	var quoter = this.grid.length * this.grid.distance / 4;
 	function getCoordinate () {
-		return quoter + Math.random() * quoter;
+		return quoter + Math.random() * quoter * 1.25;
 	}
 	return {
 		x: getCoordinate(),
@@ -213,6 +214,7 @@ Land.prototype.addTo = function (scene){
 };
 
 module.exports = Land;
+
 },{"./grid.js":2}],4:[function(require,module,exports){
 var THREE = require('./vendor/three.js');
 
@@ -230,7 +232,7 @@ function makeHemisphereLight () {
 }
 
 function makeDirectionalLight () {
-	var dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
+	var dirLight = new THREE.DirectionalLight( 0xffffff, 1.2 );
 	dirLight.color.setHSL( 0.55, 1, 1.1 );
 	dirLight.position.set( -1, 1.75, 1 );
 	dirLight.position.multiplyScalar( 50 );
@@ -260,8 +262,8 @@ window.addEventListener( 'resize', onWindowResize, false );
 function init() {
 	camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, -5000, 1000000 );
 	camera.position.y = 1850;
-	camera.position.x = -3000;
-	camera.position.z = -3000;
+	camera.position.x = -2500;
+	camera.position.z = -2500;
 	camera.rotation.order = 'YXZ';
 	camera.rotation.y -= Math.PI / 4 * 3;
 	camera.rotation.x -= Math.PI / 9;
@@ -36175,7 +36177,7 @@ var waveHeight = 20,
 waterLevel = 75;
 
 function Water (color) {
-	this.grid = makeGrid(8,100);
+	this.grid = makeGrid(20,100);
 	this.makeWaves();
 	this.triangles = this.grid.makeSeparateTriangles(color);
 }

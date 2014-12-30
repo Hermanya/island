@@ -4,7 +4,7 @@ var waveHeight = 20,
 waterLevel = 75;
 
 function Water (color) {
-	this.grid = makeGrid(8,100);
+	this.grid = makeGrid(20,100);
 	this.makeWaves();
 	this.triangles = this.grid.makeSeparateTriangles(color);
 }
