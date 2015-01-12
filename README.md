@@ -1,3 +1,3 @@
 Island
 ======
-![](https://raw.githubusercontent.com/Hermanya/island/master/Screenshot.png)
+![](https://raw.githubusercontent.com/Hermanya/land/master/Screenshot.png)
