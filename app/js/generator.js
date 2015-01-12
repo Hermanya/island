@@ -9,15 +9,14 @@ themes = [{
 // 	water: 0xB8D2Cf,
 // 	land: 0xD1AB8C
 // }, {
-// 	water: 0x2e8b57,
-// 	land: 0x666666
-// }, {
-// 	water: 0x1c6ba0,
-// 	land: 0x60afaf
-// }
-// , {
-	water: 0x1c6bf0,
-	land: 0x60afaf
+	water: 0x96a698,
+	land: 0xf9bfa3
+}, {
+	water: 0x75ba92,
+	land: 0xb37665
+}, {
+	water: 0xa3c1b9,
+	land: 0x666666
 }];
 
 

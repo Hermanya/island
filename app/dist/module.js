@@ -7,16 +7,18 @@ Light = require('./light.js');
 var scene,
 
 themes = [{
-	water: 0x88a2df,
-	land: 0xa18B6C
+// 	water: 0xB8D2Cf,
+// 	land: 0xD1AB8C
+// }, {
+	water: 0x96a698,
+	land: 0xf9bfa3
 }, {
-	water: 0x2e8b57,
+	water: 0x75ba92,
+	land: 0xb37665
+}, {
+	water: 0xa3c1b9,
 	land: 0x666666
-}, {
-	water: 0x1c6ba0,
-	land: 0x60afaf
-}
-];
+}];
 
 
 function makeWater (color) {
@@ -232,7 +234,7 @@ function makeHemisphereLight () {
 }
 
 function makeDirectionalLight () {
-	var dirLight = new THREE.DirectionalLight( 0xffffff, 1.2 );
+	var dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
 	dirLight.color.setHSL( 0.55, 1, 1.1 );
 	dirLight.position.set( -1, 1.75, 1 );
 	dirLight.position.multiplyScalar( 50 );
