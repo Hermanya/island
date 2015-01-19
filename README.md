@@ -1,3 +1,3 @@
 Island
 ======
-![](https://raw.githubusercontent.com/Hermanya/land/master/Screenshot.png)
+![low poly island](Screenshot.png)
